@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct7dgtbm44uvp"]
+[gd_scene load_steps=3 format=3 uid="uid://ct7dgtbm44uvp"]
 
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_o8tgc"]
+[ext_resource type="Texture2D" uid="uid://bpqf3mahwy6yx" path="res://icon.svg" id="2_wp25v"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_o8tgc")
@@ -13,24 +14,43 @@ offset_bottom = 582.0
 theme_override_font_sizes/font_size = 64
 text = "Let's Go"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HealthHearts" type="HBoxContainer" parent="."]
 anchors_preset = -1
 anchor_bottom = 0.031
-offset_left = 932.0
-offset_top = 20.0
-offset_right = 1109.0
-offset_bottom = 50.912
+offset_left = 742.0
+offset_top = 8.0
+offset_right = 1142.0
+offset_bottom = 115.912
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Heart" type="TextureRect" parent="HealthHearts"]
+layout_mode = 2
+texture = ExtResource("2_wp25v")
+stretch_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="HealthHearts"]
+layout_mode = 2
+texture = ExtResource("2_wp25v")
+stretch_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="HealthHearts"]
+layout_mode = 2
+texture = ExtResource("2_wp25v")
+stretch_mode = 2
+
+[node name="Menu" type="VBoxContainer" parent="."]
 offset_left = 537.0
 offset_top = 232.0
 offset_right = 602.0
 offset_bottom = 298.0
 
-[node name="RestartButton" type="Button" parent="VBoxContainer"]
+[node name="RestartButton" type="Button" parent="Menu"]
 layout_mode = 2
 text = "Restart"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Menu"]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Menu/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Menu/QuitButton" to="." method="_on_quit_button_pressed"]
