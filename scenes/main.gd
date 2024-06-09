@@ -11,8 +11,6 @@ func _process(delta):
 
 
 func _on_hud_start_game():
-	#if($HUD/StartButton.is_visible_in_tree()):
-		#$HUD/StartButton.hide()
 	if($HUD/Menu.is_visible_in_tree()):
 		$HUD/Menu.hide()
 	$HUD/HealthHearts.show()
