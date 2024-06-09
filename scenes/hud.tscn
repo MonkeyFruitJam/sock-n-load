@@ -1,41 +1,31 @@
 [gd_scene load_steps=3 format=3 uid="uid://ct7dgtbm44uvp"]
 
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_o8tgc"]
-[ext_resource type="Texture2D" uid="uid://bpqf3mahwy6yx" path="res://icon.svg" id="2_wp25v"]
+[ext_resource type="Texture2D" uid="uid://bpr6gbv01bf5j" path="res://assets/redHeart.png" id="2_kfk7r"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_o8tgc")
 
-[node name="StartButton" type="Button" parent="."]
-offset_left = 446.0
-offset_top = 482.0
-offset_right = 700.0
-offset_bottom = 582.0
-theme_override_font_sizes/font_size = 64
-text = "Let's Go"
-
 [node name="HealthHearts" type="HBoxContainer" parent="."]
 anchors_preset = -1
 anchor_bottom = 0.031
-offset_left = 742.0
-offset_top = 8.0
-offset_right = 1142.0
-offset_bottom = 115.912
+offset_left = 833.0
+offset_top = 12.0
+offset_right = 6841.0
+offset_bottom = 1991.91
+scale = Vector2(0.05, 0.05)
 
-[node name="Heart" type="TextureRect" parent="HealthHearts"]
+[node name="Heart1" type="TextureRect" parent="HealthHearts"]
 layout_mode = 2
-texture = ExtResource("2_wp25v")
-stretch_mode = 2
+texture = ExtResource("2_kfk7r")
 
 [node name="Heart2" type="TextureRect" parent="HealthHearts"]
 layout_mode = 2
-texture = ExtResource("2_wp25v")
-stretch_mode = 2
+texture = ExtResource("2_kfk7r")
 
 [node name="Heart3" type="TextureRect" parent="HealthHearts"]
 layout_mode = 2
-texture = ExtResource("2_wp25v")
-stretch_mode = 2
+texture = ExtResource("2_kfk7r")
 
 [node name="Menu" type="VBoxContainer" parent="."]
 offset_left = 537.0
@@ -43,7 +33,7 @@ offset_top = 232.0
 offset_right = 602.0
 offset_bottom = 298.0
 
-[node name="RestartButton" type="Button" parent="Menu"]
+[node name="GameStartButton" type="Button" parent="Menu"]
 layout_mode = 2
 text = "Restart"
 
@@ -51,6 +41,5 @@ text = "Restart"
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Menu/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Menu/GameStartButton" to="." method="_on_gamestart_button_pressed"]
 [connection signal="pressed" from="Menu/QuitButton" to="." method="_on_quit_button_pressed"]
