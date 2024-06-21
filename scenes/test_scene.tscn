@@ -4,7 +4,7 @@
 
 [node name="TestScene" type="Node2D"]
 
-[node name="TestFloor" type="Area2D" parent="."]
+[node name="TestFloor" type="StaticBody2D" parent="."]
 collision_mask = 30
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TestFloor"]
