@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://vdltare3oxw8"]
+
+[ext_resource type="PackedScene" uid="uid://ct7dgtbm44uvp" path="res://scenes/hud.tscn" id="1_4b6e3"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_5rnx1"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_5rnx1")
+
+[node name="HUD" parent="." instance=ExtResource("1_4b6e3")]
+
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
