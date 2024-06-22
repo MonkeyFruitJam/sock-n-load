@@ -18,5 +18,5 @@ polygon = PackedVector2Array(-144, 646, -81, 3, 0, 647, 1152, 647, 1234, 0, 1276
 position = Vector2(112, 563)
 
 [node name="CrabClaws" parent="." instance=ExtResource("2_oiqsf")]
-position = Vector2(433, 767)
-move_speed = 0.5
+position = Vector2(392, 761)
+move_length = 250.0
