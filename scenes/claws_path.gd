@@ -5,7 +5,6 @@ extends Path2D
 func _ready():
 	var p0 = Vector2.ZERO
 	var p1 = Vector2(0,-owner.move_length)
-	print(p1)
 	var p2 = Vector2(p0)
 	move_curve.add_point(p0)
 	move_curve.add_point(p1)

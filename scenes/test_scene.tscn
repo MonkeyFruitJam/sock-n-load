@@ -19,4 +19,9 @@ position = Vector2(112, 563)
 
 [node name="CrabClaws" parent="." instance=ExtResource("2_oiqsf")]
 position = Vector2(392, 761)
+
+[node name="CrabClaws2" parent="." instance=ExtResource("2_oiqsf")]
+position = Vector2(808, 765)
+wait_time = 2.0
+move_speed = 1.0
 move_length = 250.0
