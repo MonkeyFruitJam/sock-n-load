@@ -4,7 +4,10 @@ extends Node2D
 @export var lowest_point : float = 200
 @export var move_speed : float = 0.5
 
-var t = 0.0
+@onready var debug_player = owner.find_child("TestPlayer")
+@onready var bullets = owner.find_children("Bullet*")
+
+var time_sample = 0.0
 var start_point : Vector2
 var end_point : Vector2
 var mid_point : Vector2
@@ -21,11 +24,13 @@ func _bezier_curve(p0: Vector2, p1: Vector2, p2: Vector2, t : float):
 	return r
 
 func _physics_process(delta):
-	t+=delta
-	position = _bezier_curve(start_point, mid_point, end_point, t)
-	if t>=1:
-		t = 0.0
+	time_sample+=delta
+	position = _bezier_curve(start_point, mid_point, end_point, time_sample)
+	if time_sample>=1:
+		time_sample = 0.0
 
 func _on_area_2d_body_entered(body):
-	if (body.has_method("_get_hit")):
-		body._get_hit() # Replace with function body.
+	if (body == debug_player):
+		debug_player._get_hit() # Replace with function body.
+	elif (bullets.has(body)):
+		queue_free() #get hit by a bullet

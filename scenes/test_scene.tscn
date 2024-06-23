@@ -15,14 +15,13 @@ polygon = PackedVector2Array(-144, 646, -81, 3, 0, 647, 1152, 647, 1234, 0, 1276
 polygon = PackedVector2Array(-144, 646, -81, 3, 0, 647, 1152, 647, 1234, 0, 1276, 655, 1278, 768, -150, 770)
 
 [node name="TestPlayer" parent="." instance=ExtResource("1_s757u")]
-position = Vector2(1088, 267)
+position = Vector2(718, 559)
 
 [node name="Seagull2" parent="." instance=ExtResource("2_eice8")]
-position = Vector2(690, 214)
+position = Vector2(183, 297)
 move_length = 800.0
 lowest_point = 500.0
 
 [node name="Seagull3" parent="." instance=ExtResource("2_eice8")]
 position = Vector2(178, 87)
-move_length = 800.0
-lowest_point = 500.0
+move_length = 500.0
