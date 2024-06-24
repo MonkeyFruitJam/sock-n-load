@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d352nctogqaog"]
+[gd_scene load_steps=3 format=3 uid="uid://d352nctogqaog"]
 
 [ext_resource type="PackedScene" uid="uid://bjivrdp8sy8lp" path="res://scenes/test_player.tscn" id="1_s757u"]
+[ext_resource type="PackedScene" uid="uid://rt0jiw8w15e" path="res://scenes/big_foot.tscn" id="2_raapa"]
 
 [node name="TestScene" type="Node2D"]
 
@@ -15,3 +16,5 @@ polygon = PackedVector2Array(-144, 646, -81, 3, 0, 647, 1152, 647, 1234, 0, 1276
 
 [node name="TestPlayer" parent="." instance=ExtResource("1_s757u")]
 position = Vector2(282, 222)
+
+[node name="BigFoot" parent="." instance=ExtResource("2_raapa")]

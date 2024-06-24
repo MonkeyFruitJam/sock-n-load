@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://rt0jiw8w15e"]
+
+[ext_resource type="Texture2D" uid="uid://ddj3qsri1gfrc" path="res://test_assets/big_foot_test.png" id="1_4nj0h"]
+[ext_resource type="Script" path="res://scenes/big_foot.gd" id="1_vufpy"]
+[ext_resource type="Script" path="res://scenes/FSM.gd" id="3_4o83j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fvfg"]
+size = Vector2(130, 42.5)
+
+[node name="BigFoot" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_vufpy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.425781, 0.425781)
+texture = ExtResource("1_4nj0h")
+
+[node name="FloorDetect" type="CollisionShape2D" parent="."]
+position = Vector2(0, 76.75)
+shape = SubResource("RectangleShape2D_1fvfg")
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -139.0
+offset_right = 21.0
+offset_bottom = -116.0
+
+[node name="FSM" type="Node2D" parent="."]
+script = ExtResource("3_4o83j")
+
+[node name="Idle" type="Node2D" parent="FSM"]
+
+[node name="Jump" type="Node2D" parent="FSM"]
+
+[node name="Kick" type="Node2D" parent="FSM"]
+
+[node name="Death" type="Node2D" parent="FSM"]
