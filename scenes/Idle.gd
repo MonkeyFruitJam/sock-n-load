@@ -10,8 +10,8 @@ func enter():
 	IdleTimer.start()
 
 func on_idle_timeout():
-	var distance = debug_player.global_position.distance_to(bigfoot.global_position)
-	if (distance > 200):
+	var distance = debug_player.position.distance_to(bigfoot.position)
+	if (distance > bigfoot.kick_detection_range):
 		transitioned.emit(self, 'jump')
 	else:
 		transitioned.emit(self,'kick')

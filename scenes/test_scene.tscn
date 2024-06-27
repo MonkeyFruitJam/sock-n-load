@@ -15,7 +15,8 @@ polygon = PackedVector2Array(-144, 646, -81, 3, 0, 647, 1152, 647, 1234, 0, 1276
 polygon = PackedVector2Array(-144, 646, -81, 3, 0, 647, 1152, 647, 1234, 0, 1276, 655, 1278, 768, -150, 770)
 
 [node name="TestPlayer" parent="." instance=ExtResource("1_s757u")]
-position = Vector2(282, 222)
+position = Vector2(835, 556)
 
 [node name="BigFoot" parent="." instance=ExtResource("2_raapa")]
+position = Vector2(80, 432)
 jump_height = 1000.0

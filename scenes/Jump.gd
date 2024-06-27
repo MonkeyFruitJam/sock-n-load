@@ -2,7 +2,7 @@ extends State
 
 @onready var start_point : Vector2
 @onready var end_point : Vector2
-@onready var mid_point : Vector2
+
 var t = 0.0
 func _bezier_jump(p0 : Vector2, p1 : Vector2, t : float):
 	var mid = (p0 + p1) / 2
@@ -14,8 +14,8 @@ func _bezier_jump(p0 : Vector2, p1 : Vector2, t : float):
 
 func enter():
 	super.enter()
-	start_point = bigfoot.global_position
-	end_point = debug_player.global_position
+	start_point = bigfoot.position
+	end_point = debug_player.position
 
 func physics_update(delta):
 	bigfoot.position = _bezier_jump(start_point, end_point, t)

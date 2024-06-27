@@ -3,9 +3,13 @@ extends CharacterBody2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+@export var kick_speed : float = 4000
 @export var jump_height : float = 200
 @export var boss_max_health : float = 500
+@export var kick_detection_range : float = 200
+
 var boss_health : float
+
 func _ready():
 	var healthbar = find_child('ProgressBar')
 	if (healthbar):
