@@ -3,6 +3,7 @@ class_name State
 
 @onready var debug_label = owner.find_child("DebugLabel")
 @onready var debug_player = owner.get_parent().find_child("TestPlayer")
+@onready var bigfoot = owner
 
 signal transitioned # this signal will help us move between states
 

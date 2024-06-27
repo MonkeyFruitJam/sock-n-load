@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://rt0jiw8w15e"]
+[gd_scene load_steps=8 format=3 uid="uid://rt0jiw8w15e"]
 
 [ext_resource type="Texture2D" uid="uid://ddj3qsri1gfrc" path="res://test_assets/big_foot_test.png" id="1_4nj0h"]
 [ext_resource type="Script" path="res://scenes/big_foot.gd" id="1_vufpy"]
 [ext_resource type="Script" path="res://scenes/FSM.gd" id="3_4o83j"]
+[ext_resource type="Script" path="res://scenes/Idle.gd" id="4_21i21"]
+[ext_resource type="Script" path="res://scenes/State.gd" id="4_omjqr"]
+[ext_resource type="Script" path="res://scenes/Jump.gd" id="5_upopx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fvfg"]
 size = Vector2(130, 42.5)
@@ -30,9 +33,38 @@ offset_bottom = -116.0
 script = ExtResource("3_4o83j")
 
 [node name="Idle" type="Node2D" parent="FSM"]
+script = ExtResource("4_21i21")
+
+[node name="IdleTimer" type="Timer" parent="FSM/Idle"]
 
 [node name="Jump" type="Node2D" parent="FSM"]
+script = ExtResource("5_upopx")
 
 [node name="Kick" type="Node2D" parent="FSM"]
+script = ExtResource("4_omjqr")
 
 [node name="Death" type="Node2D" parent="FSM"]
+script = ExtResource("4_omjqr")
+
+[node name="bossHUD" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="bossHUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -464.0
+offset_top = 33.0
+offset_right = 472.0
+offset_bottom = 60.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+show_percentage = false
+
+[node name="Label" type="Label" parent="bossHUD/ProgressBar"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -29.0
+offset_right = 213.0
+offset_bottom = -6.0
+text = "Big Foot, The Sock Stomper"
