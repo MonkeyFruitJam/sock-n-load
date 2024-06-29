@@ -1,31 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct7dgtbm44uvp"]
+[gd_scene load_steps=2 format=3 uid="uid://fmxhdfq6b6al"]
 
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_o8tgc"]
-[ext_resource type="Texture2D" uid="uid://bpr6gbv01bf5j" path="res://assets/redHeart.png" id="2_kfk7r"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_o8tgc")
-
-[node name="HealthHearts" type="HBoxContainer" parent="."]
-anchors_preset = -1
-anchor_bottom = 0.031
-offset_left = 833.0
-offset_top = 12.0
-offset_right = 6841.0
-offset_bottom = 1991.91
-scale = Vector2(0.05, 0.05)
-
-[node name="Heart1" type="TextureRect" parent="HealthHearts"]
-layout_mode = 2
-texture = ExtResource("2_kfk7r")
-
-[node name="Heart2" type="TextureRect" parent="HealthHearts"]
-layout_mode = 2
-texture = ExtResource("2_kfk7r")
-
-[node name="Heart3" type="TextureRect" parent="HealthHearts"]
-layout_mode = 2
-texture = ExtResource("2_kfk7r")
 
 [node name="Menu" type="VBoxContainer" parent="."]
 offset_left = 537.0
