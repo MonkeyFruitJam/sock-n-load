@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://rokof8oxpv4g"]
+
+[ext_resource type="Script" path="res://scenes/crab_claws.gd" id="1_ltqfw"]
+[ext_resource type="Script" path="res://scenes/claws_path.gd" id="2_wk65u"]
+[ext_resource type="Script" path="res://scenes/claws_path_follow.gd" id="3_hjuu0"]
+[ext_resource type="Texture2D" uid="uid://w3o2xcx8e34i" path="res://assets/Crab_claws.png" id="4_rkyyb"]
+
+[node name="CrabClaws" type="Node2D"]
+script = ExtResource("1_ltqfw")
+move_speed = 0.5
+metadata/wait_time = 3.0
+metadata/move_speed = 0.1
+
+[node name="Path2D" type="Path2D" parent="."]
+script = ExtResource("2_wk65u")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(0, -1)
+rotation = -1.57616
+rotates = false
+loop = false
+script = ExtResource("3_hjuu0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(19.8417, 19.9778)
+rotation = 1.57448
+scale = Vector2(0.104823, 0.104879)
+texture = ExtResource("4_rkyyb")
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+rotation = 1.57616
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Path2D/PathFollow2D/Area2D"]
+polygon = PackedVector2Array(-78, -3, -30, -75, 45, -115, 107, -118, 23, -37, 72, -41, 2, 30, 24, 87, -56, 84, -82, 29)
+
+[node name="MoveTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="Path2D/PathFollow2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="MoveTimer" to="Path2D/PathFollow2D" method="_on_timer_timeout"]
