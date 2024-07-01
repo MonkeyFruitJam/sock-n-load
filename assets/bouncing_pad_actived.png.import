@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cohig5chhgvsq"
-path="res://.godot/imported/sorlax_laying.png-c620199257de4a5198ae450db799c8f9.ctex"
+uid="uid://43hjqm3et7p3"
+path="res://.godot/imported/bouncing_pad_actived.png-ed0e4467630c2b14aeb6b43bfa906786.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sorlax_laying.png"
-dest_files=["res://.godot/imported/sorlax_laying.png-c620199257de4a5198ae450db799c8f9.ctex"]
+source_file="res://assets/bouncing_pad_actived.png"
+dest_files=["res://.godot/imported/bouncing_pad_actived.png-ed0e4467630c2b14aeb6b43bfa906786.ctex"]
 
 [params]
 

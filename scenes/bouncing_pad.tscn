@@ -1,24 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://cblmiu6j6w4ad"]
+[gd_scene load_steps=5 format=3 uid="uid://dhb83qen3bx3m"]
 
-[ext_resource type="Texture2D" uid="uid://cohig5chhgvsq" path="res://assets/sorlax_laying.png" id="1_lb88n"]
 [ext_resource type="Script" path="res://scenes/bouncing_pad.gd" id="1_pnpne"]
+[ext_resource type="Texture2D" uid="uid://cejwx3wsy4r11" path="res://assets/bouncing_pad.png" id="2_moo1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2cyo"]
+size = Vector2(267.809, 93.7683)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2uon5"]
-size = Vector2(445, 148)
+size = Vector2(412.246, 190.464)
 
-[node name="BouncingPad" type="Node2D"]
+[node name="BouncingPad" type="StaticBody2D"]
 scale = Vector2(0.332326, 0.332326)
+collision_layer = 16
+collision_mask = 7
 script = ExtResource("1_pnpne")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_lb88n")
+position = Vector2(-3.00909, -340.028)
+scale = Vector2(0.395442, 0.337604)
+texture = ExtResource("2_moo1p")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="BounceArea" type="Area2D" parent="."]
 collision_layer = 16
-collision_mask = 3
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2.5, -75)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BounceArea"]
+position = Vector2(-1.50454, -179.284)
+shape = SubResource("RectangleShape2D_b2cyo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -97.3501)
 shape = SubResource("RectangleShape2D_2uon5")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="BounceArea" to="." method="_on_bounce_area_body_entered"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
