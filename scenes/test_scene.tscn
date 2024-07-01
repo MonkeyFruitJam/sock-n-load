@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d352nctogqaog"]
+[gd_scene load_steps=2 format=3 uid="uid://d352nctogqaog"]
 
-[ext_resource type="PackedScene" uid="uid://bjivrdp8sy8lp" path="res://scenes/test_player.tscn" id="1_s757u"]
-[ext_resource type="PackedScene" uid="uid://rokof8oxpv4g" path="res://scenes/crab_claws.tscn" id="2_oiqsf"]
+[ext_resource type="PackedScene" path="res://scenes/test_player.tscn" id="1_s757u"]
 
 [node name="TestScene" type="Node2D"]
 
@@ -16,12 +15,3 @@ polygon = PackedVector2Array(-144, 646, -81, 3, 0, 647, 1152, 647, 1234, 0, 1276
 
 [node name="TestPlayer" parent="." instance=ExtResource("1_s757u")]
 position = Vector2(112, 563)
-
-[node name="CrabClaws" parent="." instance=ExtResource("2_oiqsf")]
-position = Vector2(392, 761)
-
-[node name="CrabClaws2" parent="." instance=ExtResource("2_oiqsf")]
-position = Vector2(808, 765)
-wait_time = 2.0
-move_speed = 1.0
-move_length = 250.0
