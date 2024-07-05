@@ -19,8 +19,8 @@ texture = ExtResource("1_31poj")
 shape = SubResource("RectangleShape2D_w1q0k")
 
 [node name="AmmunitionSpawnPoint" type="Node2D" parent="."]
-position = Vector2(23, -8)
+position = Vector2(75, -8)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -91)
-zoom = Vector2(2, 2)
+position = Vector2(0, -93)
+zoom = Vector2(1.5, 1.5)
