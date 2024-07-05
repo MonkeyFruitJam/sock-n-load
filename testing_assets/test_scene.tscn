@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d352nctogqaog"]
+[gd_scene load_steps=4 format=3 uid="uid://d352nctogqaog"]
 
 [ext_resource type="PackedScene" uid="uid://bdaxga677wjf7" path="res://scenes/player_pawn.tscn" id="1_6xmaf"]
 [ext_resource type="Script" path="res://testing_assets/test_scene.gd" id="1_ijad5"]
+[ext_resource type="PackedScene" uid="uid://dsw4t6cciid5k" path="res://scenes/health_hearts.tscn" id="2_67rfq"]
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_ijad5")
@@ -17,3 +18,14 @@ polygon = PackedVector2Array(-144, 646, -81, 3, 0, 647, 1152, 647, 1234, 0, 1276
 
 [node name="PlayerPawn" parent="." instance=ExtResource("1_6xmaf")]
 position = Vector2(128, 604)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthHearts" parent="CanvasLayer" instance=ExtResource("2_67rfq")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -191.0
+offset_right = 0.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
