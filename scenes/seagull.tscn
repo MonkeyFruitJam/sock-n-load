@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://5be3llsdrbxr"]
+[gd_scene load_steps=3 format=3 uid="uid://dm4uxurw58w0x"]
 
 [ext_resource type="Script" path="res://scenes/seagull.gd" id="1_7p5li"]
-[ext_resource type="Texture2D" uid="uid://bg7qt8vpsr86k" path="res://test_seagull.png" id="1_b80qo"]
+[ext_resource type="Texture2D" path="res://test_seagull.png" id="1_b80qo"]
 
 [node name="Seagull" type="Node2D"]
 scale = Vector2(0.350345, 0.350345)

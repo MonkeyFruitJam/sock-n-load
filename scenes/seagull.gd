@@ -32,5 +32,6 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if (body == debug_player):
 		debug_player._get_hit() # Replace with function body.
-	elif (bullets.has(body)):
-		queue_free() #get hit by a bullet
+
+func get_hit():
+	queue_free()
