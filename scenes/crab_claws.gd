@@ -14,8 +14,8 @@ func _ready():
 func _on_area_2d_body_entered(body):
 	if (body == player):
 		player.get_hit()
-	elif (body.get_class() == "Ammunition"):
-		position = initial_pos
-		moveTimer.stop()
-		moveTimer.start()
-		
+
+func get_hit():
+	position = initial_pos
+	moveTimer.stop()
+	moveTimer.start() 
