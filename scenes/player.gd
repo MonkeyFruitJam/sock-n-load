@@ -45,7 +45,7 @@ func _physics_process(delta):
 			new_bullet.position = Vector2(-$AmmunitionSpawnPoint.position.x, $AmmunitionSpawnPoint.position.y)
 		add_child(new_bullet)
 		
-func get_hit():
+func _get_hit():
 	p_health -= 1
 	healthHUD.update_health(p_health)
 	
