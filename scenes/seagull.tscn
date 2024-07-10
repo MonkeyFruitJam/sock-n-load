@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfy034c1vbwft"]
+
+[ext_resource type="Script" path="res://scenes/seagull.gd" id="1_7p5li"]
+[ext_resource type="Texture2D" path="res://test_seagull.png" id="1_b80qo"]
+
+[node name="Seagull" type="Node2D"]
+scale = Vector2(0.350345, 0.350345)
+script = ExtResource("1_7p5li")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.52588e-05, 3.05176e-05)
+texture = ExtResource("1_b80qo")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(1.52588e-05, 3.05176e-05)
+polygon = PackedVector2Array(-299.705, -162.697, -284, -129, -122.736, 5.70869, -85.6298, 156.988, -13, 162, 62.7953, 139.862, 290, 148, 296.85, 117.027, 171.26, 42.8148, 14.2716, 11.4173, -40, -78)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
