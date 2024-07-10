@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://vdltare3oxw8"]
+[gd_scene load_steps=3 format=3 uid="uid://27b7toeujw75"]
 
-[ext_resource type="PackedScene" uid="uid://ct7dgtbm44uvp" path="res://scenes/hud.tscn" id="1_4b6e3"]
+[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="1_4b6e3"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_5rnx1"]
 
 [node name="Main" type="Node"]

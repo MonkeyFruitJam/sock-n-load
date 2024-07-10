@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm4uxurw58w0x"]
+[gd_scene load_steps=3 format=3 uid="uid://dfy034c1vbwft"]
 
 [ext_resource type="Script" path="res://scenes/seagull.gd" id="1_7p5li"]
 [ext_resource type="Texture2D" path="res://test_seagull.png" id="1_b80qo"]

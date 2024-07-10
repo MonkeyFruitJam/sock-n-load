@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct7dgtbm44uvp"]
+[gd_scene load_steps=3 format=3 uid="uid://lgi3xk3t4gtp"]
 
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_o8tgc"]
 [ext_resource type="Texture2D" uid="uid://bpr6gbv01bf5j" path="res://assets/redHeart.png" id="2_kfk7r"]
