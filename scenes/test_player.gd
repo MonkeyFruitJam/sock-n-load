@@ -1,14 +1,18 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 100.0
+const JUMP_VELOCITY = -250.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var respawn_position = $"../PlayerRespawnMark"
 
 func get_hit():
 	print("get hit")
+	global_position = respawn_position.global_position
+	velocity = Vector2.ZERO
+	get_tree().reload_current_scene()
 	
 func _physics_process(delta):
 	# Add the gravity.

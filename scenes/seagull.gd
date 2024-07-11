@@ -11,12 +11,16 @@ var time_sample = 0.0
 var start_point : Vector2
 var end_point : Vector2
 var mid_point : Vector2
+var start_flying : bool
+var distance_to_player : float = 1000000
 
 func _ready():
 	start_point = position
 	end_point = Vector2(start_point.x + move_length,start_point.y)
 	mid_point = Vector2((start_point.x + end_point.x)/2,start_point.y + lowest_point)
-	
+	start_flying = false
+	visible = false
+
 func _bezier_curve(p0: Vector2, p1: Vector2, p2: Vector2, t : float):
 	var q0 = p0.lerp(p1,t)
 	var q1 = p1.lerp(p2,t)
@@ -24,14 +28,17 @@ func _bezier_curve(p0: Vector2, p1: Vector2, p2: Vector2, t : float):
 	return r
 
 func _physics_process(delta):
-	time_sample+=delta
-	position = _bezier_curve(start_point, mid_point, end_point, time_sample)
-	if time_sample>=1:
-		time_sample = 0.0
+	if not start_flying:
+		distance_to_player = global_position.distance_to(debug_player.global_position)
+	if distance_to_player < 80:
+		visible = true
+		start_flying = true
+		time_sample+=delta
+		position = _bezier_curve(start_point, mid_point, end_point, time_sample)
 
 func _on_area_2d_body_entered(body):
 	if (body == debug_player):
-		debug_player._get_hit() # Replace with function body.
+		debug_player.get_hit() # Replace with function body.
 
 func get_hit():
 	queue_free()
